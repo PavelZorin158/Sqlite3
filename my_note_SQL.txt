@@ -1,0 +1,28 @@
+CREATE TABLE users (
+user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT NOT NULL,
+sex INTEGER DEFAULT 1,
+old INTEGER
+) - создать таблицу
+DROP TABLE users - удалить таблицу из базы данных
+TRUNCATE TABLE users - удалить все данные из таблицы
+
+INSERT INTO users (name, old) VALUES ('Rick', 46) - создание записи
+INSERT INTO users VALUES (1, 'Rick', 46)
+
+SELECT * FROM users - выбрать все из таблицы users
+SELECT name, old FROM users - выбрать поля name, old
+SELECT name FROM users WHERE old < 40 - выбрать все имена с old<40
+SELECT name FROM users WHERE old  BETWEEN 20 AND 50 - выбрать все имена с old от 20 до 50
+SELECT * FROM users ORDER BY old DESC - выбрать все имена в порядке возрастания old
+
+UPDATE users SET name = 'Павел' - обновление поля name во ВСЕХ записях
+UPDATE users SET name = 'Павел', old=25
+UPDATE users SET name = 'Павел' WHERE old < 40 - обновление поля name в записях, в которых old < 40
+UPDATE users SET old = 25 WHERE name LIKE 'Rick" - если в точности равно
+UPDATE users SET old = old + 10 WHERE name LIKE 'R%" - если R и далее любое зн.
+UPDATE users SET old = old + 10 WHERE name LIKE 'R_ck" - если любая буква
+
+DELETE FROM users - удаление всех записей из таблицы users
+DELETE FROM users WHERE old < 20 - удаление записей с old<20
+

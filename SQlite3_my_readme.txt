@@ -63,4 +63,10 @@ IF NOT EXISTS поможет при попытке повторного подк
 	all_results = cur.fetchall()
 	print(all_results)
 
+   Для нескольких запросов
+	cur.executescript("""SELECT * FROM users
+	INSERT INTO users(name) VALUES('Вася')
+	""")
 
+	
+	last = cur.lastrowid - возвращает последний rowid
